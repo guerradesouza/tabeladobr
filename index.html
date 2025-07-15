@@ -1,62 +1,75 @@
-import requests
-from bs4 import BeautifulSoup
-
-URL = "https://www.espn.com.br/futebol/classificacao/_/liga/BRA.1"
-HEADERS = {
-    "User-Agent": "Mozilla/5.0"
-}
-
-response = requests.get(URL, headers=HEADERS)
-soup = BeautifulSoup(response.text, 'html.parser')
-
-# Encontrar a tabela principal
-tabela = soup.find('table')
-
-# Se não achou, algo deu errado
-if not tabela:
-    raise Exception("Tabela não encontrada. Verifique se o site mudou o layout.")
-
-# Gerar HTML
-html_final = f"""
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <title>Tabela Brasileirão Série A</title>
+    <meta charset="UTF-8" />
+    <title>Tabela Brasileirão Série A - ESPN</title>
     <style>
-        body {{
+        body {
             font-family: Arial, sans-serif;
             padding: 20px;
             background-color: #f4f4f4;
-        }}
-        table {{
+        }
+        table {
             border-collapse: collapse;
             width: 100%;
             background: white;
-        }}
-        th, td {{
+        }
+        th, td {
             border: 1px solid #ccc;
             padding: 8px;
             text-align: center;
-        }}
-        th {{
+        }
+        th {
             background-color: #003366;
             color: white;
-        }}
-        tr:nth-child(even) {{
+        }
+        tr:nth-child(even) {
             background-color: #f2f2f2;
-        }}
+        }
     </style>
 </head>
 <body>
     <h2>Tabela do Brasileirão Série A - ESPN</h2>
-    {str(tabela)}
+    
+    <!-- Aqui deve ficar a tabela extraída do site da ESPN -->
+    <!-- Exemplo de tabela estática (você substitui pelo conteúdo gerado pelo script Python) -->
+    <table>
+        <thead>
+            <tr>
+                <th>Posição</th>
+                <th>Time</th>
+                <th>Pontos</th>
+                <th>Jogos</th>
+                <th>Vitórias</th>
+                <th>Empates</th>
+                <th>Derrotas</th>
+                <th>Saldo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Flamengo</td>
+                <td>70</td>
+                <td>38</td>
+                <td>21</td>
+                <td>7</td>
+                <td>10</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Palmeiras</td>
+                <td>68</td>
+                <td>38</td>
+                <td>20</td>
+                <td>8</td>
+                <td>10</td>
+                <td>18</td>
+            </tr>
+            <!-- Continue com as outras linhas da tabela -->
+        </tbody>
+    </table>
+    
 </body>
 </html>
-"""
-
-# Salvar no arquivo
-with open("index.html", "w", encoding="utf-8") as f:
-    f.write(html_final)
-
-print("Arquivo index.html gerado com sucesso!")
