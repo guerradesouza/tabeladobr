@@ -5,16 +5,49 @@
 <meta charset="UTF-8" />
 <title>Tabela do Brasileirão Série A - API Football</title>
 <style>
-  body { font-family: Arial, sans-serif; padding: 20px; background: #f4f4f4; }
-  h2 { text-align: center; margin-bottom: 20px; }
-  table { width: 100%; border-collapse: collapse; background: #fff; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-  th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
-  th { background: #003366; color: #fff; }
-  tr:nth-child(even) { background: #eef; }
+  body {
+    font-family: Arial, sans-serif;
+    padding: 10px;
+    background: #f4f4f4;
+  }
+  h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 18px;
+  }
+  .table-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    font-size: 12px; /* texto menor */
+  }
+  th, td {
+    border: 1px solid #ccc;
+    padding: 4px 6px; /* menos espaçamento */
+    text-align: center;
+    max-width: 50px; /* limite largura das colunas */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  th {
+    background: #003366;
+    color: #fff;
+    font-size: 13px;
+  }
+  tr:nth-child(even) {
+    background: #eef;
+  }
 </style>
 </head>
 <body>
 <h2>Tabela do Brasileirão Série A - API Football</h2>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -25,5 +58,6 @@
 <tr><td>1</td><td>Palmeiras</td><td>70</td><td>38</td><td>20</td><td>10</td><td>8</td><td>64</td><td>33</td><td>31</td></tr><tr><td>2</td><td>Gremio</td><td>68</td><td>38</td><td>21</td><td>5</td><td>12</td><td>63</td><td>56</td><td>7</td></tr><tr><td>3</td><td>Atletico-MG</td><td>66</td><td>38</td><td>19</td><td>9</td><td>10</td><td>52</td><td>32</td><td>20</td></tr><tr><td>4</td><td>Flamengo</td><td>66</td><td>38</td><td>19</td><td>9</td><td>10</td><td>56</td><td>42</td><td>14</td></tr><tr><td>5</td><td>Botafogo</td><td>64</td><td>38</td><td>18</td><td>10</td><td>10</td><td>58</td><td>37</td><td>21</td></tr><tr><td>6</td><td>RB Bragantino</td><td>62</td><td>38</td><td>17</td><td>11</td><td>10</td><td>49</td><td>35</td><td>14</td></tr><tr><td>7</td><td>Fluminense</td><td>56</td><td>38</td><td>16</td><td>8</td><td>14</td><td>51</td><td>47</td><td>4</td></tr><tr><td>8</td><td>Atletico Paranaense</td><td>56</td><td>38</td><td>14</td><td>14</td><td>10</td><td>51</td><td>43</td><td>8</td></tr><tr><td>9</td><td>Internacional</td><td>55</td><td>38</td><td>15</td><td>10</td><td>13</td><td>46</td><td>45</td><td>1</td></tr><tr><td>10</td><td>Fortaleza EC</td><td>54</td><td>38</td><td>15</td><td>9</td><td>14</td><td>45</td><td>44</td><td>1</td></tr><tr><td>11</td><td>Sao Paulo</td><td>53</td><td>38</td><td>14</td><td>11</td><td>13</td><td>40</td><td>38</td><td>2</td></tr><tr><td>12</td><td>Cuiaba</td><td>51</td><td>38</td><td>14</td><td>9</td><td>15</td><td>40</td><td>39</td><td>1</td></tr><tr><td>13</td><td>Corinthians</td><td>50</td><td>38</td><td>12</td><td>14</td><td>12</td><td>47</td><td>48</td><td>-1</td></tr><tr><td>14</td><td>Cruzeiro</td><td>47</td><td>38</td><td>11</td><td>14</td><td>13</td><td>35</td><td>32</td><td>3</td></tr><tr><td>15</td><td>Vasco DA Gama</td><td>45</td><td>38</td><td>12</td><td>9</td><td>17</td><td>41</td><td>51</td><td>-10</td></tr><tr><td>16</td><td>Bahia</td><td>44</td><td>38</td><td>12</td><td>8</td><td>18</td><td>50</td><td>53</td><td>-3</td></tr><tr><td>17</td><td>Santos</td><td>43</td><td>38</td><td>11</td><td>10</td><td>17</td><td>39</td><td>64</td><td>-25</td></tr><tr><td>18</td><td>Goias</td><td>38</td><td>38</td><td>9</td><td>11</td><td>18</td><td>36</td><td>53</td><td>-17</td></tr><tr><td>19</td><td>Coritiba</td><td>30</td><td>38</td><td>8</td><td>6</td><td>24</td><td>41</td><td>73</td><td>-32</td></tr><tr><td>20</td><td>America Mineiro</td><td>24</td><td>38</td><td>5</td><td>9</td><td>24</td><td>42</td><td>81</td><td>-39</td></tr>
 </tbody>
 </table>
+</div>
 </body>
 </html>
